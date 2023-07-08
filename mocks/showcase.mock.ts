@@ -1,6 +1,6 @@
-import { CategoryShowcase, ShowcaseListItem } from "@/interfaces/showcase.interface";
+import { CategoryShowcase, ShowcaseList } from "@/interfaces/showcase.interface";
 
-export const showcases: ShowcaseListItem[] = [
+export const showcases: ShowcaseList = [
     {
         id: 1,
         image: 'https://www.workle.ru/s3storage/commonfiles/0030b4db-5b5f-4da9-982b-67b6ea785943.jpg',
@@ -117,7 +117,7 @@ export const showcases: ShowcaseListItem[] = [
     },
 ]
 
-export const fetchShowcasesData = (category: CategoryShowcase): Promise<ShowcaseListItem[]> => {
+export const fetchShowcasesData = (category: CategoryShowcase): Promise<ShowcaseList> => {
     if (category === 'all') return Promise.resolve(showcases)
 
     const showcaseResult = showcases.filter(showcase => showcase.category === category)
